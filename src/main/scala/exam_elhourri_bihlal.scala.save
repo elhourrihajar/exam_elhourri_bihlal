@@ -1,0 +1,31 @@
+import org.apache.spark.sql.SparkSession
+import scala.sys.process._
+import scala.io.StdIn.readLine
+import org.apache.hadoop.conf.Configuration
+object exam_elhourri_bihlal{
+               
+         def main(args : Array[String]){
+                      val spark =  SparkSession.builder.appName("delete").getOrCreate()
+                       var df = spark.read.format("csv").option("header",true).option("separator", ",").load("hdfs:/exam_elhourri_bihlal/bronze/GOLD_DATA.csv")
+                       var id:String = ""; 
+                       val fs = FileSystem.get(spark.sparkContext.hadoopConfiguration)
+                       val srcPath="";
+                       if(fs.exists(srcPath) && fs.isFile(srcPath))
+    fs.delete(srcPath,true) 
+                      println("--------------")
+                      println("please provide id to be deleted") 
+                      id = readLine()
+                      df = df.filter(" id !="+"'"+id+"'")
+                     // s"hdfs dfs -rm -r /exam_elhourri_bihlal/bronze/GOLD_DATA.csv" !
+                      df.write.format("csv").save("hdfs:/exam_elhourri_bihlal/bronze/GOLD_DATA2.csv")
+                      println("delete successfully done ")                       
+                      spark.stop()
+
+
+
+
+        }
+
+
+
+}

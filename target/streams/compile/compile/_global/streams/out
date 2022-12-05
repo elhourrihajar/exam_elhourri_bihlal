@@ -1,0 +1,11 @@
+[0m[[0m[31merror[0m] [0m[0m/home/nodekamicode/exam_elhourri_bihlal/src/main/scala/exam_elhourri_bihlal.scala:20:36: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("srcPath")[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.apache.hadoop.fs.Path[0m
+[0m[[0m[31merror[0m] [0m[0m                      if(fs.exists("srcPath") && fs.isDirectory("srcPath"))[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/nodekamicode/exam_elhourri_bihlal/src/main/scala/exam_elhourri_bihlal.scala:20:65: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("srcPath")[0m
+[0m[[0m[31merror[0m] [0m[0m required: org.apache.hadoop.fs.Path[0m
+[0m[[0m[31merror[0m] [0m[0m                      if(fs.exists("srcPath") && fs.isDirectory("srcPath"))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
